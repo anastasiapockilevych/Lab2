@@ -1,0 +1,22 @@
+hfrom telethon import TelegramClient
+from telethon.tl.functions.messages import SendMessageRequest
+from telethon.errors import PeerFloodError, UserPrivacyRestrictedError
+import asyncio
+
+api_id = 25389139
+api_hash = '0befdeea21f0f62080fca3adf4a48cbc'
+
+group_link = 'https://t.me/+GC_Xp-XRPttlZGI6'
+text_message = 'Тут має бути ваш законний текст'
+
+client = TelegramClient('session_name', api_id, api_hash)
+
+
+async def main():
+    await client.start()
+
+    try:
+        group = await client.get_entity(group_link)
+    except Exception as e:
+        print(f"Не вдалося отримати групу: {e}")
+        return
