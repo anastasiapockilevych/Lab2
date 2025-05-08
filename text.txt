@@ -11,7 +11,7 @@ text_message = 'Тут має бути ваш законний текст'
 
 client = TelegramClient('session_name', api_id, api_hash)
 
-
+#comment 
 async def main():
     await client.start()
 
